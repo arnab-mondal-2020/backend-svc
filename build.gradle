@@ -37,3 +37,10 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 	
 }
+war {
+	archiveName = "backend-svc.war"
+	manifest {
+		attributes "Implementation-Title" : "backend-svc", "Implementation-Version" : rootProject.version,
+		"Class-Path" : configurations.compile.collect {it.getName()}.join(" ")
+	}
+}
