@@ -18,11 +18,9 @@ import com.bp.micro.svc.handler.AddMajorHandler;
 import com.bp.micro.svc.handler.GetDegreeHandler;
 import com.bp.micro.svc.handler.GetInstitutionHandler;
 import com.bp.micro.svc.handler.GetMajorHandler;
-import com.bp.micro.svc.handler.GetUserHandler;
 import com.bp.micro.svc.handler.UpdateDegreeHandler;
 import com.bp.micro.svc.handler.UpdateInstitutionHandler;
 import com.bp.micro.svc.handler.UpdateMajorHandler;
-import com.bp.micro.svc.teo.AdminUser;
 import com.bp.micro.svc.teo.Degree;
 import com.bp.micro.svc.teo.Institute;
 import com.bp.micro.svc.teo.Major;
@@ -249,19 +247,4 @@ public class BackEndDAOImpl implements BackEndDAO {
     return institutes;
   }
 
-  @Override
-  public AdminUser getUserInfoByNumber(String number) throws BackendException {
-    System.out.println("getUserInfoByNumber >> " + number);
-    GetUserHandler handler = new GetUserHandler();
-    List<AdminUser> result = null;
-    try {
-      result = template.query(handler.getQuery(), handler.getParamMap(number),
-          handler);
-    } catch (DataAccessException e) {
-      throw new BackendException(e.getMessage());
-    } catch (Exception e) {
-      throw new BackendException(e.getMessage());
-    }
-    return result.get(0);
-  }
 }

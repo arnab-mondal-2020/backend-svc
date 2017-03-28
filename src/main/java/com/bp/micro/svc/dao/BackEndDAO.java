@@ -3,7 +3,6 @@ package com.bp.micro.svc.dao;
 import java.util.List;
 
 import com.bp.micro.svc.exception.BackendException;
-import com.bp.micro.svc.teo.AdminUser;
 import com.bp.micro.svc.teo.Degree;
 import com.bp.micro.svc.teo.Institute;
 import com.bp.micro.svc.teo.Major;
@@ -47,5 +46,4 @@ public interface BackEndDAO {
 
   public int getMajorCount() throws BackendException;
 
-  public AdminUser getUserInfoByNumber(String number) throws BackendException;
 }

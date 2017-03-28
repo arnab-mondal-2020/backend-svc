@@ -11,7 +11,6 @@ import com.bp.micro.svc.constants.BackendConstants;
 import com.bp.micro.svc.dao.BackEndDAO;
 import com.bp.micro.svc.exception.BackendException;
 import com.bp.micro.svc.exception.RecordAlreadyExistsException;
-import com.bp.micro.svc.teo.AdminUser;
 import com.bp.micro.svc.teo.Degree;
 import com.bp.micro.svc.teo.Institute;
 import com.bp.micro.svc.teo.Major;
@@ -196,10 +195,6 @@ public class BackEndBO implements BackendConstants {
 
   public List<Institute> getColleges() throws BackendException {
     return backEndDAO.getColleges();
-  }
-
-  public AdminUser getUserInfoByNumber(String userNumber) throws BackendException {
-    return backEndDAO.getUserInfoByNumber(userNumber);
   }
 
   private String buildInstituteId(String aLevel) {
